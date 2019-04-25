@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.TreeSet;
 
 public class HammingFrame extends JFrame {
 
@@ -17,7 +18,7 @@ public class HammingFrame extends JFrame {
     //DEFAULT UI COMPONENTS;
     private Font f32 = new Font("f18", -1, FONT_SIZE);
     private JPanel panel1;
-    private ArrayList<String> stations = new ArrayList<>(HammingDist.getMeso());
+    private TreeSet<String> stations = new TreeSet<>(HammingDist.getMeso());
     private void setUpContainer() {
         panel1 = new JPanel();
         panel1.setLayout(new GridBagLayout());
@@ -241,7 +242,16 @@ public class HammingFrame extends JFrame {
         label5.setLabelFor(distance4TextField);
         label6.setLabelFor(distance0TextField);
         enterHammingDistTextField.setText(Integer.toString(slider1.getValue()));
-        addStationButton.addActionListener(e -> stations.add(textField2.getText()));
+        addStationButton.addActionListener(e -> {
+            stations.add(textField2.getText());
+            compareWithComboBox.removeAllItems();
+            for (String s : stations) {
+                compareWithComboBox.addItem(s);
+
+            }
+            revalidate();
+            repaint();
+        });
         showStationButton.addActionListener(e -> {
             ArrayList<String> toShow = new ArrayList<>();
             for (String s : stations) {
