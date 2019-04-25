@@ -61,5 +61,11 @@ public class HammingDist {
         }
         return sums;
     }
-
+    public static int asciiTotal(String a){
+        int sum=0;
+        for(char c:a.toCharArray()){
+            sum+=(int)c;
+        }
+        return sum;
+    }
 }
