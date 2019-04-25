@@ -11,3 +11,5 @@ For the "creative" section I decided to show some of the under-the-hood workings
 
 # What was Learned
 Overall, I gained a greater understanding of not only GUI programming itself, but also some of the tedium it entails. I imagine most proffesionals would rather use design tools than reinvent the wheel each time. However, in order to gain a true understanding of the task you're undertaking, you must know the implementation details. Much like there are GUI tools for Git and terminal for navigating Windows: they're more powerful in their implementation, but also entail less efficiency.
+# UML
+![new_diagram](https://user-images.githubusercontent.com/47227872/56753186-a5029d00-674f-11e9-9c4c-afd62cff2f9d.png)
